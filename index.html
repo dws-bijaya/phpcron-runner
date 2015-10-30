@@ -1,0 +1,73 @@
+<html>
+<head>
+	<title> PHPCron Runner 1.0</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h3> PHPCron Runner 1.0 : run your  php in background <h3>
+<hr />
+<b> Requirement </b>
+<ul>
+	<li> PHP Verion  >= 5.0  </li>
+	<li> OS  =  linux/window </li>
+	<li> Webserver  =  Apache/IIS/ngix </li>
+</ul>
+<b> Dependancy </b>
+<ul>
+	<li> nohup for linux   </li>
+	<li> COM extension for winodw </li>
+	<li> Webserver  =  Apache/IIS/ngix </li>
+</ul>
+<b> Folder structre </b>
+<ul>
+	<li> [+].classes (<i> user defined classess<i>) </li>
+	<li> [+].configs (<i> user configuration  classess<i>)</li>
+	<li> [+].systems (<i> Lib lxasses  for cron runner <i>)</li>
+	<li> Webserver  =  Apache/IIS/ngix </li>
+</ul>
+
+
+<b> Basic Setting </b>
+<ul>
+	<li> <i>define your php path for winodw i,e ex <i><br /> 
+		 define("CRON_PHP_PATH_WIN", 'D:/xampp/php/php.exe');
+		 <i>define your php path for linux i,e ex <i><br /> 
+		define("CRON_PHP_PATH_LINUX", '/usr/bin/nohup /usr/local/bin/php');   
+	</li>
+	<li> COM extension for winodw </li>
+	<li> Webserver  =  Apache/IIS/ngix </li>
+</ul>
+
+
+db.revokeRolesFromUser(
+    "mongoroot",
+    [
+      { role: "readWrite", db: "rankwatch" }
+    ]
+)
+
+db.revokeRolesFromUser(
+    "mongoroot",
+    [
+      { role: "readWrite", db: "test" }
+    ]
+)
+
+db.runCommand(
+  {
+    usersInfo:"mongoroot",
+    showPrivileges:true
+  }
+)
+
+
+
+</body>
+<html>
