@@ -1,0 +1,63 @@
+# root application of 3g rocket framework
+.gitignore
+/system.config.php
+/applications/*/versions/*/config.xml
+/.htaccess
+temp/*
+/systems/*
+*.zip
+*.rar
+Thumbs.db
+*.bak
+.gitignore
+
+
+# ignore static resources
+templates/applications/default/versions/mach4/themes/default/bootstrap/*
+templates/applications/default/versions/mach4/themes/default/bootstrap_3.0/*
+templates/applications/default/versions/mach4/themes/default/flash/*
+templates/applications/default/versions/mach4/themes/default/fonts/*
+templates/applications/default/versions/mach4/themes/default/images/*
+templates/applications/default/versions/mach4/themes/default/images-home/*
+templates/applications/default/versions/mach4/themes/default/js/hc/*
+templates/applications/default/versions/mach4/themes/default/less/*
+templates/applications/default/versions/mach4/themes/default/pie/*
+templates/applications/default/versions/mach4/themes/default/css/images/*
+
+
+#
+images/*
+keyvolume
+
+# cron spec.
+/runnow-starter.sh
+/config.php
+
+
+# amember spec.
+/member/.htaccess
+/member/application/configs/*
+/member/library/Am/License.php
+/member/data/*
+
+# api aplication spec.
+/api/system.config.php
+/api/.htaccess
+/api/system.config.php
+/api/applications/*/versions/*/config.xml
+/api/templates/.htaccess
+/api/vhost.d/*
+
+# api cron spec.
+crons/run_update_top_rank.sh
+crons/config.php
+crons/tmp/*
+
+# crontabs
+crontabs
+crontabs/*
+
+#jApi Config
+/rw-api/tmp/*
+/rw-api/jApi_config.php
+/rw-api/rankwatch.config.php
