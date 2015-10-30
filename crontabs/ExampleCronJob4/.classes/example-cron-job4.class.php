@@ -70,6 +70,10 @@ class exampleCronJob4CronService extends cronService implements iCronRunner
 			// example :  <command> <json_encoded_string>
 			// passed parameters too 
 			$this->readCmd(1, 2);
+
+			// exec php shell command
+			$out=$this->execCmd();
+			var_dump($out);
 		}
 		$this->writeToLog("Completed ....")		;
 		var_dump($DumpVar) ;

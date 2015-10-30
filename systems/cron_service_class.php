@@ -2,7 +2,7 @@
 /*
   ######################################################################
   script file : cron service
-  version     : 1.2.0.0
+  version     : 1.0
   description : cron service class
   ######################################################################
  */
@@ -74,7 +74,7 @@ abstract class cronService implements iCronRunner {
 	}
 	/* */
 
-	
+
 	public final function getParams ($key = NULL ) {
 		return $key == null ? cronRunner::$_PARAMS : ( isset(cronRunner::$_PARAMS[$key])? cronRunner::$_PARAMS[$key] : NULL ) ;
 	}
