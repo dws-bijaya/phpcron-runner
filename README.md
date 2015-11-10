@@ -1,14 +1,21 @@
 
-______ _   _ ______  _____                  ______                            
-| ___ \ | | || ___ \/  __ \                 | ___ \                           
-| |_/ / |_| || |_/ /| /  \/_ __ ___  _ __   | |_/ /   _ _ __  _ __   ___ _ __ 
-|  __/|  _  ||  __/ | |   | '__/ _ \| '_ \  |    / | | | '_ \| '_ \ / _ \ '__|
-| |   | | | || |    | \__/\ | | (_) | | | | | |\ \ |_| | | | | | | |  __/ |   
-\_|   \_| |_/\_|     \____/_|  \___/|_| |_| \_| \_\__,_|_| |_|_| |_|\___|_|   
-                                                                              
-PHPCron Runner 1.0.0
+ ___ _  _ ___  ___                   _     _      ___                        
+| _ \ || | _ \/ __|_ _ ___ _ _    _ | |___| |__  | _ \_  _ _ _  _ _  ___ _ _ 
+|  _/ __ |  _/ (__| '_/ _ \ ' \  | || / _ \ '_ \ |   / || | ' \| ' \/ -_) '_|
+|_| |_||_|_|  \___|_| \___/_||_|  \__/\___/_.__/ |_|_\\_,_|_||_|_||_\___|_|                                                                              
+PHPCron Job Runner 1.0.0
 -------------------------------------------------------------------------------
-Run your php script in background/forground as a process
+Start and stop tasks in the background
+
+This package can start and stop tasks in the background.
+
+The main class takes an object as parameter that will be used to implement common functionality of the task that is meant to be executed like the code to run when the task is started, stopped, when receiving new commands, etc..
+
+Applications should extend the main class to implement the functionality of the background task that is going to be executed.
+
+The class can start the task in the background in either Linux or Windows. It uses the PHP CLI version to execute the background task. It can take a custom php.ini configuration file.
+
+The class can be started from the PHP CLI version or as Web server HTTP request. In the later in can preserve the super-global variables $_GET, $_POST, $_COOKIE, $_SESSION, $_FILES.
 ####################################
 
 
