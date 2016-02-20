@@ -12,7 +12,7 @@ class cronRunner {
 
 	// Background
 	const BG_RUN_COMMAND_WIN   = '%%PHP_EXE_PATH%% -q %%INI_FILE%% %%COMMAND%%  2>nul >nul';
-	const BG_RUN_COMMAND_LINUX = '%%PHP_EXE_PATH%% -q %%INI_FILE%% %%COMMAND%%  >/dev/null & echo $!';
+	const BG_RUN_COMMAND_LINUX = '%%PHP_EXE_PATH%% -q %%INI_FILE%% %%COMMAND%%  > /dev/null 2> /dev/null & echo $!';
 
 	// Kill 
 	const KILL_COMMAND_LINUX  =  'kill [[PID]]' ;
@@ -1057,7 +1057,11 @@ class cronRunner {
 
 		if ( function_exists('popen') &&  function_exists('pclose') ) 
 		{
-			$pHandler = @popen("{$bgexec} {$command}", "r");
+			// Remove trim "& echo $!" becuse error in linux
+			$c = "{$bgexec} {$command}";
+			$pos = strripos($c, "& echo $!");
+			$c   = $pos !==FALSE ? (substr($c, 0, $pos)) : $c;
+			$pHandler = @popen($c, "r");
 			if ( $pHandler ) {
 				pclose($pHandler);
 				return 0;
