@@ -1060,7 +1060,7 @@ class cronRunner {
 			// Remove trim "& echo $!" becuse error in linux
 			$c = "{$bgexec} {$command}";
 			$pos = strripos($c, "& echo $!");
-			$c   = $pos !==FALSE ? (substr($c, 0, $pos)) : $c;
+			$c   = $pos !==FALSE ? (substr($c, 0, $pos) . ' & ') : $c;
 			$pHandler = @popen($c, "r");
 			if ( $pHandler ) {
 				pclose($pHandler);
